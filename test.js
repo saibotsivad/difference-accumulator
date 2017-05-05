@@ -49,11 +49,19 @@ test('accumulating values identical to original will not accumulate', t => {
 	t.end()
 })
 
-test('accumulating values identical to original will not accumulate', t => {
-	const acc = accumulator({})
+test('an accumulation of undefined will be part of the delta', t => {
+	const acc = accumulator({ firstName: 'Bilbo' })
 	acc.accumulate({ firstName: undefined })
 	const diff = acc.difference()
 	t.equal(Object.keys(diff)[0], 'firstName')
 	t.ok(diff.firstName === undefined)
+	t.end()
+})
+
+test('an accumulation of undefined for a non-existant property will not be part of the delta', t => {
+	const acc = accumulator({})
+	acc.accumulate({ firstName: undefined })
+	const diff = acc.difference()
+	t.equal(Object.keys(diff).length, 0)
 	t.end()
 })
