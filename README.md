@@ -10,12 +10,19 @@ The normal way:
 npm install difference-accumulator
 ```
 
+```
+const accumulator = require('./')
+```
+
 ## use
+
+<!--js
+const accumulator = require('./')
+-->
 
 Create a new accumulator with the original object:
 
 ```js
-const accumulator = require('difference-accumulator')
 const originalData = {
 	firstName: 'Bilbo',
 	lastName: 'Baggins'
@@ -32,18 +39,14 @@ acc.accumulate({ firstName: 'Frodo' })
 Get out the sum of the changes:
 
 ```js
-const diff = acc.difference()
-// diff = {
-// 	firstName: 'Frodo'
-// }
+acc.difference() // => { firstName: 'Frodo' }
 ```
 
 Undo the accumulated changes:
 
 ```js
 acc.clear()
-const diff = acc.difference()
-// diff = {}
+acc.difference() // => {}
 ```
 
 ## api
@@ -87,34 +90,33 @@ const difference = {
 		uncle: 'Bilbo'
 	}
 }
+acc.difference() // => difference
 ```
 
 Accumulating falsey values (including `undefined`) will
 yield a difference which includes those properties:
 
 ```js
-const acc = accumulate({ firstName: 'Bilbo' })
-acc.accumulate({ firstName: undefined })
-// diff = {
-// 	firstName: undefined
-// }
+const bagginsAccumulator = accumulator({ firstName: 'Bilbo' })
+bagginsAccumulator.accumulate({ firstName: undefined })
+bagginsAccumulator.difference() // => { firstName: undefined }
 ```
 
 Accumulating values identical to the original data will
 yield a difference which *does not* include that change:
 
 ```js
-const acc = accumulate({ firstName: 'Bilbo' })
-acc.accumulate({ firstName: 'Bilbo' })
-// diff = {}
+const bagginses = accumulator({ firstName: 'Bilbo' })
+bagginses.accumulate({ firstName: 'Bilbo' })
+bagginses.difference() // => {}
 ```
 
 Note that the comparison is done using `===` on each property, therefore:
 
 ```js
-const acc = accumulate({})
-acc.accumulate({ firstName: undefined })
-// diff = {}
+const justSomeGuy = accumulator({})
+justSomeGuy.accumulate({ firstName: undefined })
+justSomeGuy.difference() // => {}
 ```
 
 ### `acc.difference()`
