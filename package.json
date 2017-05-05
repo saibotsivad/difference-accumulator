@@ -1,6 +1,6 @@
 {
   "name": "difference-accumulator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Accumulate differences in an object, get the total difference, reset the accumulator.",
   "main": "index.js",
   "scripts": {
