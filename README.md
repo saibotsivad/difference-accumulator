@@ -11,7 +11,7 @@ npm install difference-accumulator
 ```
 
 ```
-const accumulator = require('./')
+const accumulator = require('difference-accumulator')
 ```
 
 ## use
