@@ -23,5 +23,8 @@
   "homepage": "https://github.com/saibotsivad/difference-accumulator#readme",
   "devDependencies": {
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "object.entries-ponyfill": "1.0.1"
   }
 }
