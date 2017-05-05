@@ -42,9 +42,10 @@ test('accumulating undefined still shows a delta', t => {
 
 test('accumulating values identical to original will not accumulate', t => {
 	const acc = accumulator({ firstName: 'Bilbo' })
+	acc.accumulate({ firstName: 'Frodo' })
+	t.deepEqual(acc.difference(), { firstName: 'Frodo' })
 	acc.accumulate({ firstName: 'Bilbo' })
-	const diff = acc.difference()
-	t.deepEqual(diff, {})
+	t.deepEqual(acc.difference(), {})
 	t.end()
 })
 
