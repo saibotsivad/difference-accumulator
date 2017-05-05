@@ -1,0 +1,27 @@
+{
+  "name": "difference-accumulator",
+  "version": "0.0.0",
+  "description": "Accumulate differences in an object, get the total difference, reset the accumulator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saibotsivad/difference-accumulator.git"
+  },
+  "keywords": [
+    "object",
+    "accumulate",
+    "accumulator"
+  ],
+  "author": "saibotsivad",
+  "license": "VOL",
+  "bugs": {
+    "url": "https://github.com/saibotsivad/difference-accumulator/issues"
+  },
+  "homepage": "https://github.com/saibotsivad/difference-accumulator#readme",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
