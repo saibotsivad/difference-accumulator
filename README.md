@@ -1,5 +1,7 @@
 # difference-accumulator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saibotsivad/difference-accumulator.svg)](https://greenkeeper.io/)
+
 Accumulate differences in an object, get the total difference, reset the accumulator.
 
 ## install
