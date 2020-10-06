@@ -54,6 +54,7 @@ test('an accumulation of undefined will be part of the delta', t => {
 	acc.accumulate({ firstName: undefined })
 	const diff = acc.difference()
 	t.equal(Object.keys(diff)[0], 'firstName')
+	t.equal(Object.keys(diff).length, 1)
 	t.ok(diff.firstName === undefined)
 	t.end()
 })

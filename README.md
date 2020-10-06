@@ -10,7 +10,7 @@ The normal way:
 npm install difference-accumulator
 ```
 
-```
+```node
 const accumulator = require('difference-accumulator')
 ```
 
